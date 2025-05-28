@@ -17,6 +17,7 @@ public class ApiTests {
                 .get(endpoint)
                 .then();
 
+        response.log().body();
 
 
     }
@@ -42,3 +43,5 @@ public class ApiTests {
 //Response → extrair dados, ler
 //
 //then() → ValidatableResponse → validar/assert
+
+
