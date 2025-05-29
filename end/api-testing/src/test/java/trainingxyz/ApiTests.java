@@ -119,8 +119,87 @@ public class ApiTests {
         response.log().body();
     }
 
+    @Test
+    public void createSweatband(){
+        String endpoint = "http://localhost:8888/api_testing/product/create.php";
+        Product product = new Product(
+                "sweatband",
+                "sweeeeeeeeeaaaatttttttttttttt",
+                5,
+                3
+        );
+
+        ValidatableResponse response = given()
+                .body(product)
+                .when()
+                .post(endpoint)
+                .then();
+
+        response.log().body();
+    }
+
+    @Test
+    public void updateSweatband(){
+        String endpoint = "http://localhost:8888/api_testing/product/update.php";
+        Product product = new Product(
+                24,
+                "sweatband",
+                "sweeeeeeeeeaaaatttttttttttttt",
+                5,
+                3
+        );
+
+        ValidatableResponse response = given()
+                .body(product)
+                .when()
+                .put(endpoint)
+                .then();
+
+        response.log().body();
+    }
+
+    @Test
+    public void retrieveSweatband() {
+        String endpoint = "http://localhost:8888/api_testing/product/read_one.php";
+
+        ValidatableResponse response = given()
+                .queryParam("id", 24)
+                .when()
+                .get(endpoint)
+                .then();
+
+        response.log().body();
+
 
     }
+
+    @Test
+    public void deleteSweatband(){
+        String endpoint = "http://localhost:8888/api_testing/product/delete.php";
+        String body = """
+                {
+                    "id": 24
+                }
+                
+                """;
+        ValidatableResponse response = given()
+                .body(body)
+                .when()
+                .delete(endpoint)
+                .then();
+
+        response.log().body();
+    }
+
+
+
+
+
+
+
+
+
+}
 
 //RequestSpecification → preparar → when().get()
 //
