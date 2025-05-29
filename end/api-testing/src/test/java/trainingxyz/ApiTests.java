@@ -81,6 +81,35 @@ public class ApiTests {
         response.log().body();
     }
 
+    @Test
+    public void deleteProduct(){
+        String endpoint = "http://localhost:8888/api_testing/product/delete.php";
+        String body = """
+                {
+                    "id": 19
+                }
+                
+                """;
+        ValidatableResponse response = given()
+                .body(body)
+                .when()
+                .delete(endpoint)
+                .then();
+
+        response.log().body();
+    }
+
+    public void bigBody(){
+        String body = """
+                {
+                    "name" : "Water Bottle",
+                    "description" : "Blue water bottle. Holds 128 ounces.",
+                    "price" : 12,
+                    "category_id" : 3
+                }
+                """;
+    }
+
 
     }
 

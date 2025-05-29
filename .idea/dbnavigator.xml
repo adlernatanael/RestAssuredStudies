@@ -24,7 +24,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="c76b04e0-67f3-4a4a-b499-03129c70e954">
-      <console name="Connection" type="STANDARD" schema="apitestingdb" session="Main"><![CDATA[SELECT * FROM products WHERE name='Water Bottle';]]></console>
+      <console name="Connection" type="STANDARD" schema="apitestingdb" session="Main"><![CDATA[SELECT * FROM products]]></console>
       <console name="Connection 1" type="STANDARD" schema="apitestingdb" session="Main"><![CDATA[SELECT * FROM products WHERE name = 'Water Botlle';]]></console>
     </connection>
   </component>
