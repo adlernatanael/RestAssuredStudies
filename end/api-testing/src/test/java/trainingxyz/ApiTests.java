@@ -41,7 +41,7 @@ public class ApiTests {
         String endpoint = "http://localhost:8888/api_testing/product/create.php";
         String body = """
                 {
-                    "name": "Water Botlle",
+                    "name": "Water Bottle",
                     "description": "Blue water botlle. Holds 64 ounces",
                     "price": 12,
                     "category_id": 3
@@ -56,6 +56,29 @@ public class ApiTests {
 
         response.log().body();
 
+    }
+
+    @Test
+    public void updateProduct(){
+        String endpoint = "http://localhost:8888/api_testing/product/update.php";
+        String body = """
+                {
+                    "id": 19,
+                    "name": "Water Bottle",
+                    "description": "Blue water botlle. Holds 64 ounces",
+                    "price": 115,
+                    "category_id": 3
+                }
+                
+                """;
+
+        ValidatableResponse response = given()
+                .body(body)
+                .when()
+                .put(endpoint)
+                .then();
+
+        response.log().body();
     }
 
 

@@ -24,7 +24,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="c76b04e0-67f3-4a4a-b499-03129c70e954">
-      <console name="Connection" type="STANDARD" schema="apitestingdb" session="Main"><![CDATA[select * from categories]]></console>
+      <console name="Connection" type="STANDARD" schema="apitestingdb" session="Main"><![CDATA[SELECT * FROM products WHERE name='Water Bottle';]]></console>
+      <console name="Connection 1" type="STANDARD" schema="apitestingdb" session="Main"><![CDATA[SELECT * FROM products WHERE name = 'Water Botlle';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -37,6 +38,13 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="c76b04e0-67f3-4a4a-b499-03129c70e954" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="c76b04e0-67f3-4a4a-b499-03129c70e954" dataset="apitestingdb.products" active-filter-id="8982566a-26f4-4aa9-8ad2-0f7159b8c011">
+      <filter id="8982566a-26f4-4aa9-8ad2-0f7159b8c011" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
