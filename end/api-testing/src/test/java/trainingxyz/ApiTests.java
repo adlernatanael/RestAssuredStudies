@@ -30,9 +30,9 @@ public class ApiTests {
                 .queryParam("id", 2)
                 .when()
                 .get(endpoint)
-                .then();
-
-        response.log().body();
+                .then()
+                .assertThat()
+                .statusCode(200);
 
 
         }
