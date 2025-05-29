@@ -81,6 +81,13 @@ public void getCategories() {
    private $username = "root";
    private $password = "root";
    ```
+   > Se houver erro ao criar, atualizar ou deletar algum item: Aparece no
+   > banco de dados do PHP my ADMIN, mas localmente não aparece? Pode ser erro de conexão entre os Bancos, use isso =
+   > Recarregar a conexão:
+   > Clique com o botão direito na conexão do banco (ex: localhost ou o nome da conexão).
+   > Escolha Disconnect (desconectar).
+   > Depois clique novamente e escolha Connect (conectar).
+   > Isso fecha e reabre a conexão, limpando o cache.
 
    > Consulte o arquivo `guia_conexao_mamp_mysql.md` para mais detalhes se houver erro.
 
