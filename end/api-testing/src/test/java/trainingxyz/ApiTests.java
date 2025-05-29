@@ -2,6 +2,7 @@ package trainingxyz;
 
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import models.Product;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -99,15 +100,23 @@ public class ApiTests {
         response.log().body();
     }
 
-    public void bigBody(){
-        String body = """
-                {
-                    "name" : "Water Bottle",
-                    "description" : "Blue water bottle. Holds 128 ounces.",
-                    "price" : 12,
-                    "category_id" : 3
-                }
-                """;
+    @Test
+    public void createSerializedProduct(){
+        String endpoint = "http://localhost:8888/api_testing/product/create.php";
+        Product product = new Product(
+               "Water Bottle",
+               "Blue water botlle. Holds 64 ounces",
+                12,
+                3
+        );
+
+        ValidatableResponse response = given()
+                .body(product)
+                .when()
+                .post(endpoint)
+                .then();
+
+        response.log().body();
     }
 
 
