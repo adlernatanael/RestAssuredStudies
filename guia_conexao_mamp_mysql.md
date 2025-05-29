@@ -1,8 +1,4 @@
-Esse repositorio está sendo criado á base de um curso na plataforma Linkedin Learning
-Java: Automated API Testing with REST Assured com a Angie Jones (Java Champion, Senior Director, and Master Inventor)
-Usamos Junit, Maven, RestAssured, JDK 17 (mas estou utilizando JDK24), MySql no MAMP pra rodar Localmente
-Como no intellij comunity não há possibilidade de conectar-se diretamente com o Banco de Dados,
-utilizei-me do plugin Database Navigator e do ChatGpt para o erro apresentado nesse documento
+
 
 # 📄 Guia: Corrigindo Erro de Conexão com MySQL no MAMP
 
