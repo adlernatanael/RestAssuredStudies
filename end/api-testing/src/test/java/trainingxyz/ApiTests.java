@@ -36,6 +36,29 @@ public class ApiTests {
 
         }
 
+    @Test
+    public void createProduct(){
+        String endpoint = "http://localhost:8888/api_testing/product/create.php";
+        String body = """
+                {
+                    "name": "Water Botlle",
+                    "description": "Blue water botlle. Holds 64 ounces",
+                    "price": 12,
+                    "category_id": 3
+                }
+                
+                """;
+        ValidatableResponse response = given()
+                .body(body)
+                .when()
+                .post(endpoint)
+                .then();
+
+        response.log().body();
+
+    }
+
+
     }
 
 //RequestSpecification → preparar → when().get()
