@@ -1,11 +1,15 @@
 package trainingxyz;
 
+import io.restassured.matcher.ResponseAwareMatcher;
+import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import models.Product;
+import org.hamcrest.Matcher;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class ApiTests {
 
@@ -32,7 +36,13 @@ public class ApiTests {
                 .get(endpoint)
                 .then()
                 .assertThat()
-                .statusCode(200);
+                .statusCode(200)
+                .body("id", equalTo("2"))
+                .body("name", equalTo("Cross-Back Training Tank"))
+                .body("description", equalTo("The most awesome phone of 2013!"))
+                .body("price", equalTo("299.00"))
+                .body("category_id", equalTo(2))
+                .body( "category_name", equalTo("Active Wear - Women"));
 
 
         }
